@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my first integration</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <script src="{{url_for('static', filename='js/app.js')}}" defer></script>
+  </head>
+  <body>
+    <main>
+      <p class="etiqueta">Sistema escola</p>
+      <h1>Cadastrar aluno</h1>
+      <p>Digite os dados do aluno e acompanhe a resposta do servidor</p>
+
+      <form id="formulario">
+        <label for="nome">Nome do aluno</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          autocomplete="name"
+          placeholder="ex. Ana Silva"
+          required
+        />
+
+        <label for="email">E-mail do aluno</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="email"
+          placeholder="ex. ana@email.com"
+          required
+        />
+
+        <label for="curso">Curso de interesse</label>
+        <select name="curso" id="curso" required>
+          <option value="">Selecione um curso</option>
+          <option value="Desenvolvimento de Sistemas">
+            Desenvolvimento de Sistemas
+          </option>
+          <option value="Administração">Administração</option>
+          <option value="Informática">Informática</option>
+        </select>
+
+        <button id="botao" type="submit">Cadastrar</button>
+      </form>
+
+      <p id="mensagem" role="status" aria-live="polite">
+        Aguardando cadastro
+      </p>
+
+      <hr />
+
+      <h2>Excluir aluno</h2>
+      <p>Informe o ID do aluno que deseja excluir.</p>
+
+      <form id="formularioExclusao">
+        <label for="idAluno">ID do aluno</label>
+        <input
+          type="number"
+          name="idAluno"
+          id="idAluno"
+          min="1"
+          step="1"
+          placeholder="Ex. 1"
+          required
+        />
+
+        <button id="botaoExcluir" type="submit">
+          Excluir aluno
+        </button>
+      </form>
+
+      <p id="mensagemExclusao" role="status" aria-live="polite"></p>
+
+      <p class="nota">
+        Dados temporários: os cadastros são apagados ao reiniciar o servidor.
+      </p>
+    </main>
+  </body>
+</html>
